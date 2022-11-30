@@ -79,6 +79,13 @@ int[] GetArray()
             Console.WriteLine("Это не число, попробуйте снова:");
             continue;
         }
+        // Проверка вхождения числа в диапазон [0,100]
+        // if (Convert.ToInt32(get_curr) < 0 || Convert.ToInt32(get_curr) > 100) 
+        // {
+        //     Console.WriteLine("Число вне диапазона [0,100], попробуйте снова:");
+        //     continue;
+        // }
+
         str = str + "," + get_curr;
     }
 
