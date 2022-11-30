@@ -2,10 +2,12 @@
 // Пользователь вводит с клавиатуры M чисел. 
 // Посчитайте, сколько чисел строго больше 0 ввёл пользователь.
 
-/* Console.WriteLine($"Введите числа, каждое с новой строки. Для окончания ввода нажмите Enter без ввода числа.");
+Console.WriteLine($"Введите числа, каждое с новой строки. Для окончания ввода нажмите Enter без ввода числа.");
 int[] array = GetArray();
 Console.WriteLine($"Введенный массив:\n[{string.Join(", ", array)}]");
+Console.WriteLine();
 Console.WriteLine($"Введено {PosCount(array)} {NumCompletion(PosCount(array))} больше ноля");
+Console.WriteLine();
 
 int PosCount(int[] array)
 {
@@ -22,15 +24,13 @@ string NumCompletion(int number)
     {
         case 1:
             return "число";
-        case 2:
-        case 3:
-        case 4:
+        case 2: case 3: case 4:
             return "числа";
         default:
             return "чисел";
     }
 }
- */
+
 
 //----------------------------------------------------------------
 // Задача 2 (43)
@@ -38,7 +38,7 @@ string NumCompletion(int number)
 // (не менее 6)в промежутке от 0 до 100, а на выходе выводит этот же массив, 
 // но отсортированный по возрастанию(от меньшего числа к большему).
 
-Console.WriteLine($"Введите числа, каждое с новой строки. Для окончания ввода нажмите Enter без ввода числа.");
+/* Console.WriteLine($"Введите числа, каждое с новой строки. Для окончания ввода нажмите Enter без ввода числа.");
 int[] array = GetArray();
 Console.WriteLine($"Введенный массив:\n[{string.Join(", ", array)}]");
 Console.WriteLine();
@@ -50,22 +50,18 @@ int[] SortArray(int[] array)
     int min;
     for (int i = 0; i < array.Length - 1; i++)
     {
-        for (int j = 1; j < array.Length; j++)
+        for (int j = i + 1; j < array.Length; j++)
         {
             if (array[j] < array[i])
-            {
-                Console.WriteLine($"{array[i]}<--->{array[j]}");
-                Console.Write($"[{string.Join(", ", array)}]");
-                Console.Write(" <----> ");
+            {   
                 min = array[i];
                 array[i] = array[j];
                 array[j] = min;
-                Console.WriteLine($"[{string.Join(", ", array)}]");
             }
         }
     }
     return array;
-}
+} */
 
 // -------------------------Общий метод---------------------------
 
