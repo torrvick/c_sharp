@@ -1,44 +1,52 @@
-﻿int m = 10;
-int n = 10;
-int[,] worm = new int[m, n];
-int cur_row = 0;
-int cur_col = 0;
-int r = m;
-int c = n;
-int chi = 1;
+﻿PrintArray(WormArray(5,5));
 
-for(int g=0;g<m*n;g++)
+int[,] WormArray(int totalRows, int totalCols)
 {
-for (int i = cur_col; i < c; i++, chi++)
-    worm[cur_row, i] = chi;
-cur_col = c - 1;
-for (int i = cur_row + 1; i < r; i++, chi++)
-    worm[i, cur_col] = chi;
-cur_row = r - 1;
-for (int i = cur_col - 1; i >= n - cur_col - 1; i--, chi++)
-    worm[cur_row, i] = chi;
-cur_col = n - cur_col - 1;
-for (int i = cur_row - 1; i > m - cur_row - 1; i--, chi++)
-    worm[i,cur_col] = chi;
-cur_row = m - cur_row;
-cur_col++;
+    int[,] wormArray = new int[totalRows, totalCols];
+    int curIterTotalRows = totalRows;
+    int curIterTotalCols = totalCols;
 
-r--;
-c--;
+    int currentRow = 0;
+    int currentCol = 0;
+    int value = 1;
+    int totalValue = totalRows * totalCols;
+
+    while (currentRow < (totalRows / 2 + totalRows % 2) || currentCol < (totalCols / 2 + totalRows % 2))
+    {
+        for (int i = currentCol; i < curIterTotalCols && value <= totalValue; i++, value++)
+            wormArray[currentRow, i] = value;
+        currentCol = curIterTotalCols - 1;
+        currentRow++;
+
+        for (int i = currentRow; i < curIterTotalRows && value <= totalValue; i++, value++)
+            wormArray[i, currentCol] = value;
+        currentRow = curIterTotalRows - 1;
+        currentCol--;
+
+        for (int i = currentCol; i >= totalCols - curIterTotalCols && value <= totalValue; i--, value++)
+            wormArray[currentRow, i] = value;
+        currentCol = totalCols - curIterTotalCols;
+        currentRow--;
+        
+        for (int i = currentRow; i > totalRows - curIterTotalRows && value <= totalValue; i--, value++)
+            wormArray[i, currentCol] = value;
+        currentRow = totalRows - curIterTotalRows + 1;
+        currentCol++;
+        curIterTotalRows--;
+        curIterTotalCols--;
+    }
+
+    return wormArray;
 }
-
-
-
-
-
-PrintArray(worm);
 
 void PrintArray(int[,] array)
 {
-    for (int i = 0; i < m; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < n; j++)
-            Console.Write($"{array[i, j],4}");
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write($"{array[i, j],5}");
         Console.WriteLine();
     }
 }
+
+
