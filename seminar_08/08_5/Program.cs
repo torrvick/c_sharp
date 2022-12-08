@@ -1,4 +1,6 @@
-﻿PrintArray(WormArray(4,4));
+﻿// Напишите программу, которая заполнит спирально массив 4 на 4.
+
+PrintArray(WormArray(4,4));
 
 int[,] WormArray(int totalRows, int totalCols)
 {
