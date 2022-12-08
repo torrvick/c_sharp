@@ -1,6 +1,6 @@
 ﻿// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-int[,] matrix1 = GetMatrix(2, 3, 1, 6);
-int[,] matrix2 = GetMatrix(4, 3, 1, 6);
+int[,] matrix1 = GetMatrix(2, 2, 1, 6);
+int[,] matrix2 = GetMatrix(2, 2, 1, 6);
 
 Console.WriteLine();
 Console.WriteLine("Матрица 1:");
@@ -17,8 +17,6 @@ catch (Exception e)
 {
     Console.WriteLine($"Ошибка: {e.Message}");
 }
-//PrintMatrix(MatrixMult(matrix1,matrix2));
-
 
 int[,] MatrixMult(int[,] matrix1, int[,] matrix2)
 {
