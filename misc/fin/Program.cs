@@ -6,12 +6,12 @@ Console.WriteLine();
 
 string[] ArrayFilter(string[] array)
 {
-    string str_temp = "";
+    string strTemp = "";
     for (int i = 0; i < array.Length; i++)
-        if (array[i].Length <= 3) str_temp += array[i] + ",";
-    str_temp = str_temp.Trim(',');
-    string[] array_filtered = str_temp.Split(',');
-    return array_filtered;
+        if (array[i].Length <= 3) strTemp += array[i] + ",";
+    strTemp = strTemp.Trim(',');
+    string[] arrayFiltered = strTemp.Split(',');
+    return arrayFiltered;
 }
 
 Console.WriteLine("Отфильтрованный массив:");
